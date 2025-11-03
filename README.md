@@ -6,7 +6,7 @@ This repository presents a structured experimental workflow for investigating **
 
 | Stage | Notebook | Description |
 |--------|-----------|-------------|
-| **1. Dataset Acquisition** | **01-DatasetCollection-KaggleDownload.ipynb** | Automates the **download of datasets** from Kaggle using the Kaggle API, ensuring reproducibility and version control. |
+| **1. Dataset Acquisition** | **01-DatasetCollection-KaggleDownload.ipynb** | Automates the **download of datasets** from Kaggle using the Kaggle API. |
 | **2. Data Import & Validation** | **02-DatasetCollection-KaggleImport.ipynb** | Handles **data import and validation**. Performs initial exploratory checks such as data shape, types, and missing values to ensure integrity. |
 | **3. Training Set Construction** | **03-DatasetCollection-TrainingSet-D200.ipynb** | Constructs the **dataset D200**, for RQ1 and RQ2, consisting of sequences of fixed length 200. |
 | | **04-DatasetCollection-TrainingSet-D400P.ipynb** | Constructs the **dataset D400+**, for RQ3 and RQ4, by selecting sequences with a minimum length of 400 elements and truncating longer ones to 10,000 elements. |
