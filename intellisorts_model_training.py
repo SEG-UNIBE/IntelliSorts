@@ -1,6 +1,7 @@
 """
 Model Training
 """
+import os
 import pandas as pd
 import numpy as np
 import pickle
@@ -19,6 +20,7 @@ from sklearn.neural_network import MLPClassifier
 
 tf.random.set_seed(42)
 np.random.seed(42)
+
 
 def grid_search(model_name, train_input, train_output, param_grid, test_size=0.3, val_size=0.5, random_state=42):
     """
@@ -187,11 +189,11 @@ def evaluate_model(best_model, label_encoder, X_test_scaled, y_test):
     print()
     print(summary_table)
     
-    correct_merge_count = ((comparison_df["True Algorithm"] == "merge_sort") & (comparison_df["Predicted Algorithm"] == "merge_sort")).sum()
-    correct_timsort_count = ((comparison_df["True Algorithm"] == "timsort") & (comparison_df["Predicted Algorithm"] == "timsort")).sum()
-    correct_insertion_count = ((comparison_df["True Algorithm"] == "insertion_sort") & (comparison_df["Predicted Algorithm"] == "insertion_sort")).sum()
-    correct_quick_sort_count = ((comparison_df["True Algorithm"] == "quick_sort") & (comparison_df["Predicted Algorithm"] == "quick_sort")).sum()
-    correct_introsort_count = ((comparison_df["True Algorithm"] == "introsort") & (comparison_df["Predicted Algorithm"] == "introsort")).sum()
+    correct_merge_count = ((comparison_df["True Algorithm"] == "Mergesort") & (comparison_df["Predicted Algorithm"] == "Mergesort")).sum()
+    correct_timsort_count = ((comparison_df["True Algorithm"] == "Timsort") & (comparison_df["Predicted Algorithm"] == "Timsort")).sum()
+    correct_insertion_count = ((comparison_df["True Algorithm"] == "Insertionsort") & (comparison_df["Predicted Algorithm"] == "Insertionsort")).sum()
+    correct_quick_sort_count = ((comparison_df["True Algorithm"] == "Quicksort") & (comparison_df["Predicted Algorithm"] == "Quicksort")).sum()
+    correct_introsort_count = ((comparison_df["True Algorithm"] == "Introsort") & (comparison_df["Predicted Algorithm"] == "Introsort")).sum()
     
     print()
     print("Correctly predicted Insertionsort:", correct_insertion_count)
